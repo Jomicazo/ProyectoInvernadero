@@ -1,0 +1,3307 @@
+[
+    {
+        "id": "e40071997f8cc7b9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f11b0285dda14f63",
+        "type": "ui_slider",
+        "z": "e40071997f8cc7b9",
+        "name": "Ajuste temperatura parcela 1",
+        "label": "Ajuste temperatura parcela 1",
+        "tooltip": "",
+        "group": "5d6a390d24c89e24",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "x": 180,
+        "y": 940,
+        "wires": [
+            [
+                "60515393c21eb865",
+                "2bf0b7c1e127c269",
+                "d321f48b204c13f5"
+            ]
+        ]
+    },
+    {
+        "id": "121d475cef7e3ee9",
+        "type": "ui_slider",
+        "z": "e40071997f8cc7b9",
+        "name": "Ajuste temperatura parcela 2",
+        "label": "Ajuste temperatura parcela 2",
+        "tooltip": "",
+        "group": "5d6a390d24c89e24",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "x": 170,
+        "y": 1020,
+        "wires": [
+            [
+                "60515393c21eb865",
+                "2bf0b7c1e127c269",
+                "87f6148cb2aeda8e"
+            ]
+        ]
+    },
+    {
+        "id": "44163dc0d99d210d",
+        "type": "ui_slider",
+        "z": "e40071997f8cc7b9",
+        "name": "Ajuste temperatura parcela 3",
+        "label": "Ajuste temperatura parcela 3",
+        "tooltip": "",
+        "group": "5d6a390d24c89e24",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "x": 170,
+        "y": 1100,
+        "wires": [
+            [
+                "60515393c21eb865",
+                "2bf0b7c1e127c269",
+                "59f8069cbf0eece8"
+            ]
+        ]
+    },
+    {
+        "id": "ad97ac04e3108394",
+        "type": "ui_switch",
+        "z": "e40071997f8cc7b9",
+        "name": "Activación manual ventilador 1",
+        "label": "Ventilador 1",
+        "tooltip": "",
+        "group": "3e4e6ece72e0d49d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 230,
+        "y": 2180,
+        "wires": [
+            [
+                "fd3cfd6e26793859",
+                "b269b0bf476e0791",
+                "a0f24e4041d671da",
+                "c61c6ec528426482"
+            ]
+        ]
+    },
+    {
+        "id": "e14a14ae127f6e1e",
+        "type": "ui_switch",
+        "z": "e40071997f8cc7b9",
+        "name": "Activación manual ventilador 2",
+        "label": "Ventilador 2",
+        "tooltip": "",
+        "group": "3e4e6ece72e0d49d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 230,
+        "y": 2260,
+        "wires": [
+            [
+                "6a2a8aa0259f08b3",
+                "b269b0bf476e0791",
+                "a0f24e4041d671da",
+                "c61c6ec528426482"
+            ]
+        ]
+    },
+    {
+        "id": "c1a05070421c699c",
+        "type": "ui_switch",
+        "z": "e40071997f8cc7b9",
+        "name": "Activación manual ventilador 3",
+        "label": "Ventilador 3",
+        "tooltip": "",
+        "group": "3e4e6ece72e0d49d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 230,
+        "y": 2340,
+        "wires": [
+            [
+                "ac8ce80892e32879",
+                "b269b0bf476e0791",
+                "a0f24e4041d671da",
+                "c61c6ec528426482"
+            ]
+        ]
+    },
+    {
+        "id": "d163262df1fe0c42",
+        "type": "ui_switch",
+        "z": "e40071997f8cc7b9",
+        "name": "Activación manual ventilador 4",
+        "label": "Ventilador 4",
+        "tooltip": "",
+        "group": "3e4e6ece72e0d49d",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 230,
+        "y": 2420,
+        "wires": [
+            [
+                "ae27a70b5d586667",
+                "b269b0bf476e0791",
+                "a0f24e4041d671da",
+                "c61c6ec528426482"
+            ]
+        ]
+    },
+    {
+        "id": "cd1d844e8b5b3590",
+        "type": "ui_led",
+        "z": "e40071997f8cc7b9",
+        "order": 1,
+        "group": "e72faadef87ef1d6",
+        "width": 0,
+        "height": 0,
+        "label": "Ventilador 1",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Ventilador 1",
+        "x": 930,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "c67575f428f4400b",
+        "type": "ui_led",
+        "z": "e40071997f8cc7b9",
+        "order": 2,
+        "group": "e72faadef87ef1d6",
+        "width": 0,
+        "height": 0,
+        "label": "Ventilador 2",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Ventilador 2",
+        "x": 930,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "5f581e1ecdfbd790",
+        "type": "ui_led",
+        "z": "e40071997f8cc7b9",
+        "order": 3,
+        "group": "e72faadef87ef1d6",
+        "width": 0,
+        "height": 0,
+        "label": "Ventilador 3",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Ventilador 3",
+        "x": 930,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "ba4acc6ca8e65851",
+        "type": "ui_led",
+        "z": "e40071997f8cc7b9",
+        "order": 4,
+        "group": "e72faadef87ef1d6",
+        "width": 0,
+        "height": 0,
+        "label": "Ventilador 4",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Ventilador 4",
+        "x": 930,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "50da4a11f6fcc196",
+        "type": "comment",
+        "z": "e40071997f8cc7b9",
+        "name": "Control de ventiladores ",
+        "info": "",
+        "x": 160,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "c3c1ae70bfa489b6",
+        "type": "comment",
+        "z": "e40071997f8cc7b9",
+        "name": "Datos del invernadero",
+        "info": "",
+        "x": 140,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "0709d290fb54018e",
+        "type": "mqtt in",
+        "z": "e40071997f8cc7b9",
+        "name": "Datos sensores de sensores y ventiladores",
+        "topic": "II6/ESP_5037548/DATOS",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ddaab1a97220a7d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "e3c823a0529c8041"
+            ]
+        ]
+    },
+    {
+        "id": "c424bd652c93be3f",
+        "type": "debug",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e3c823a0529c8041",
+        "type": "json",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "c424bd652c93be3f",
+                "0cc7bdbfe9c9265d",
+                "50b548a75f0587b0",
+                "d57db98e28b1ecf1",
+                "5fe52258625e77f5",
+                "678ca4a5aeb68478",
+                "f760887f7f4a9823",
+                "7e282b12766848f0",
+                "fad6635715d1b358",
+                "546e3512b97997ce",
+                "ed45cd70f0900e0e",
+                "5646ffc84c3d43e5",
+                "2fa193fc42278d98",
+                "1c307c37b1175d82",
+                "332b4897d829c62f",
+                "4310aef53e215da8"
+            ]
+        ]
+    },
+    {
+        "id": "59536d6a757d351e",
+        "type": "ui_gauge",
+        "z": "e40071997f8cc7b9",
+        "name": "Temperatura parcela 1",
+        "group": "0a4221cca746bf13",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura parcela 1",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 880,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "0cc7bdbfe9c9265d",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var temperatura1=msg.payload.temp[0];\nif (temperatura1==-255){\n    \n    temperatura1=0;\n    \n}\n\nmsg.payload=temperatura1;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "59536d6a757d351e"
+            ]
+        ]
+    },
+    {
+        "id": "bb602a209034cc8e",
+        "type": "ui_gauge",
+        "z": "e40071997f8cc7b9",
+        "name": "Temperatura parcela 2",
+        "group": "0a4221cca746bf13",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura parcela 2",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 880,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f7fd1393bb434145",
+        "type": "ui_gauge",
+        "z": "e40071997f8cc7b9",
+        "name": "Temperatura parcela 3",
+        "group": "0a4221cca746bf13",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura parcela 3",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 880,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c0f753534d517b6a",
+        "type": "ui_gauge",
+        "z": "e40071997f8cc7b9",
+        "name": "Temperatura parcela 4",
+        "group": "0a4221cca746bf13",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura parcela 4",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 880,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "50b548a75f0587b0",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var temperatura2=msg.payload.temp[1];\nif (temperatura2==-255){\n    \n    temperatura2=0;\n    \n}\n\nmsg.payload=temperatura2;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 220,
+        "wires": [
+            [
+                "bb602a209034cc8e"
+            ]
+        ]
+    },
+    {
+        "id": "d57db98e28b1ecf1",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var temperatura3=msg.payload.temp[2];\nif (temperatura3==-255){\n    \n    temperatura3=0;\n    \n}\n\nmsg.payload=temperatura3;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 280,
+        "wires": [
+            [
+                "f7fd1393bb434145"
+            ]
+        ]
+    },
+    {
+        "id": "5fe52258625e77f5",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var temperatura4=msg.payload.temp[3];\nif (temperatura4==-255){\n    \n    temperatura4=0;\n    \n}\n\nmsg.payload=temperatura4;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 360,
+        "wires": [
+            [
+                "c0f753534d517b6a"
+            ]
+        ]
+    },
+    {
+        "id": "dc2f89dc3b4d7a6d",
+        "type": "ui_gauge",
+        "z": "e40071997f8cc7b9",
+        "name": "Humedad parcela 1",
+        "group": "14a26e1f461829cf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Humedad parcela 1",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1430,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "678ca4a5aeb68478",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var hum=msg.payload.hum[0];\nif (hum==-255){\n    \n   hum=0;\n    \n}\n\nmsg.payload=hum;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 160,
+        "wires": [
+            [
+                "dc2f89dc3b4d7a6d"
+            ]
+        ]
+    },
+    {
+        "id": "f760887f7f4a9823",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var hum=msg.payload.hum[1];\nif (hum==-255){\n    \n    hum=0;\n    \n}\n\nmsg.payload=hum;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 220,
+        "wires": [
+            [
+                "35742b8142c36c84"
+            ]
+        ]
+    },
+    {
+        "id": "7e282b12766848f0",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var temperatura3=msg.payload.temp[2];\nif (temperatura3==-255){\n    \n    temperatura3=0;\n    \n}\n\nmsg.payload=temperatura3;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 280,
+        "wires": [
+            [
+                "1b3bbbc40cc793ef"
+            ]
+        ]
+    },
+    {
+        "id": "fad6635715d1b358",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var temperatura4=msg.payload.temp[3];\nif (temperatura4==-255){\n    \n    temperatura4=0;\n    \n}\n\nmsg.payload=temperatura4;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 360,
+        "wires": [
+            [
+                "253b5e914c946846"
+            ]
+        ]
+    },
+    {
+        "id": "35742b8142c36c84",
+        "type": "ui_gauge",
+        "z": "e40071997f8cc7b9",
+        "name": "Humedad parcela 2",
+        "group": "14a26e1f461829cf",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Humedad parcela 2",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1430,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1b3bbbc40cc793ef",
+        "type": "ui_gauge",
+        "z": "e40071997f8cc7b9",
+        "name": "Humedad parcela 3",
+        "group": "14a26e1f461829cf",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Humedad parcela 3",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1430,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "253b5e914c946846",
+        "type": "ui_gauge",
+        "z": "e40071997f8cc7b9",
+        "name": "Humedad parcela 4",
+        "group": "14a26e1f461829cf",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Humedad parcela 4",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1430,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "546e3512b97997ce",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var hum=msg.payload.hum[0];\nif (hum==-255){\n    \n   msg.payload=false;\n    \n}\nelse{\n    \n    msg.payload=true;\n}\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 460,
+        "wires": [
+            [
+                "f496ca8da4b682dd"
+            ]
+        ]
+    },
+    {
+        "id": "f496ca8da4b682dd",
+        "type": "ui_led",
+        "z": "e40071997f8cc7b9",
+        "order": 1,
+        "group": "695d3500ef2e5d34",
+        "width": 0,
+        "height": 0,
+        "label": "Sensor 1",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Sensor 1",
+        "x": 880,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ed45cd70f0900e0e",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var hum=msg.payload.hum[1];\nif (hum==-255){\n    \n   msg.payload=false;\n    \n}\nelse{\n    \n    msg.payload=true;\n}\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 540,
+        "wires": [
+            [
+                "f6a4a1d716d29208"
+            ]
+        ]
+    },
+    {
+        "id": "5646ffc84c3d43e5",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var hum=msg.payload.hum[2];\nif (hum==-255){\n    \n   msg.payload=false;\n    \n}\nelse{\n    \n    msg.payload=true;\n}\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 600,
+        "wires": [
+            [
+                "302f37d50d77f78b"
+            ]
+        ]
+    },
+    {
+        "id": "2fa193fc42278d98",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var hum=msg.payload.hum[3];\nif (hum==-255){\n    \n   msg.payload=false;\n    \n}\nelse{\n    \n    msg.payload=true;\n}\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 660,
+        "wires": [
+            [
+                "330c795b8b0225ca"
+            ]
+        ]
+    },
+    {
+        "id": "f6a4a1d716d29208",
+        "type": "ui_led",
+        "z": "e40071997f8cc7b9",
+        "order": 1,
+        "group": "695d3500ef2e5d34",
+        "width": 0,
+        "height": 0,
+        "label": "Sensor 2",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Sensor 2",
+        "x": 880,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "302f37d50d77f78b",
+        "type": "ui_led",
+        "z": "e40071997f8cc7b9",
+        "order": 1,
+        "group": "695d3500ef2e5d34",
+        "width": 0,
+        "height": 0,
+        "label": "Sensor 3",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Sensor 3",
+        "x": 880,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "330c795b8b0225ca",
+        "type": "ui_led",
+        "z": "e40071997f8cc7b9",
+        "order": 1,
+        "group": "695d3500ef2e5d34",
+        "width": 0,
+        "height": 0,
+        "label": "Sensor 4",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Sensor 4",
+        "x": 880,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a6be1ba13c001695",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "740314aea7c69146",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Ilumniacion",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1430,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "bfaa7b6ddf9d62e7",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "740314aea7c69146",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Nivel de la bomba",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 930,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "5a2b2995a819043d",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "//var tanque=msg.payload[0].Tanque;\n//var fecha=new Date();\nconst nivel = [\"bajo. Por favor, rellene el depósito\",\"a la mitad\",\"alto. Depósito lleno\"];\n//msg.payload=nivel[tanque];\nmsg.payload=nivel[msg.payload];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 780,
+        "wires": [
+            [
+                "bfaa7b6ddf9d62e7"
+            ]
+        ]
+    },
+    {
+        "id": "82aa9fd7945e7028",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "740314aea7c69146",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Fecha de los últimos datos recibidos",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1490,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "1c307c37b1175d82",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Hora sensores",
+        "func": "var time=new Date();\nmsg.payload=time.toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 500,
+        "wires": [
+            [
+                "f5f4b098ccf758df"
+            ]
+        ]
+    },
+    {
+        "id": "332b4897d829c62f",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Fecha sensores",
+        "func": "var time=new Date();\nmsg.payload=time.toLocaleDateString('es-ES', { timeZone: 'Europe/Madrid' });\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 580,
+        "wires": [
+            [
+                "82aa9fd7945e7028"
+            ]
+        ]
+    },
+    {
+        "id": "f5f4b098ccf758df",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "740314aea7c69146",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Hora de los últimos datos recibidos",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1500,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "8e3f3817ad9f389d",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "740314aea7c69146",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Generación de paneles solares (kWh)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 990,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "3298b922682d4cf8",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var generacion=(msg.payload[0].Gen)*0.05*24*3600;\n\nmsg.payload=generacion;\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 840,
+        "wires": [
+            [
+                "8e3f3817ad9f389d"
+            ]
+        ]
+    },
+    {
+        "id": "04171e36fb82e829",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "5d6a390d24c89e24",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Fecha de los última actualización cd temperaturas máximas",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 850,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "60515393c21eb865",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Hora sensores",
+        "func": "var time=new Date();\nmsg.payload=time.toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 1280,
+        "wires": [
+            [
+                "f57e8c588e856b96"
+            ]
+        ]
+    },
+    {
+        "id": "2bf0b7c1e127c269",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Fecha sensores",
+        "func": "var time=new Date();\nmsg.payload=time.toLocaleDateString('es-ES', { timeZone: 'Europe/Madrid' });\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 1360,
+        "wires": [
+            [
+                "04171e36fb82e829"
+            ]
+        ]
+    },
+    {
+        "id": "f57e8c588e856b96",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "5d6a390d24c89e24",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Hora de última actualización de temperaturas máximas",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 830,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "6ba1e761b48406eb",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "3e4e6ece72e0d49d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Fecha de última actualización de ventiladores",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1010,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "b269b0bf476e0791",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Hora sensores",
+        "func": "var time=new Date();\nmsg.payload=time.toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 2020,
+        "wires": [
+            [
+                "ad43335844ff403e"
+            ]
+        ]
+    },
+    {
+        "id": "a0f24e4041d671da",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Fecha sensores",
+        "func": "var time=new Date();\nmsg.payload=time.toLocaleDateString('es-ES', { timeZone: 'Europe/Madrid' });\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 2100,
+        "wires": [
+            [
+                "6ba1e761b48406eb"
+            ]
+        ]
+    },
+    {
+        "id": "ad43335844ff403e",
+        "type": "ui_text",
+        "z": "e40071997f8cc7b9",
+        "group": "3e4e6ece72e0d49d",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Hora de última actualización de ventiladores",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1010,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "5dd02bca98076478",
+        "type": "mqtt in",
+        "z": "e40071997f8cc7b9",
+        "name": "Datos sensores de la bomba",
+        "topic": "II6/ESP_5037548/Riego",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ddaab1a97220a7d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 180,
+        "y": 780,
+        "wires": [
+            [
+                "c646fc2d24f03980"
+            ]
+        ]
+    },
+    {
+        "id": "c646fc2d24f03980",
+        "type": "json",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 570,
+        "y": 780,
+        "wires": [
+            [
+                "5a2b2995a819043d"
+            ]
+        ]
+    },
+    {
+        "id": "1029f71994b2572d",
+        "type": "mqtt in",
+        "z": "e40071997f8cc7b9",
+        "name": "Datos sensores de sensores y ventiladores",
+        "topic": "II6/ESP_5037548/DATOS",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ddaab1a97220a7d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 200,
+        "y": 1720,
+        "wires": [
+            [
+                "ba09c8fbb6f2b7bd"
+            ]
+        ]
+    },
+    {
+        "id": "d321f48b204c13f5",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperaturamax1",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87f6148cb2aeda8e",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperaturamax2",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59f8069cbf0eece8",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperaturamax3",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b6f43d04ebd555e",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperaturamax4",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf29f071e99446bc",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var man1=flow.get(\"vertmanual1\");\nvar man2=flow.get(\"vertmanual2\");\nvar man3=flow.get(\"vertmanual3\");\nvar man4=flow.get(\"vertmanual4\");\n\nvar tempmax1=flow.get(\"temperaturamax1\");\nvar tempmax2=flow.get(\"temperaturamax2\");\nvar tempmax3=flow.get(\"temperaturamax3\");\nvar tempmax4=flow.get(\"temperaturamax4\");\n\nvar tempactual1=msg.payload.temp[0];\nvar tempactual2=msg.payload.temp[1];\nvar tempactual3=msg.payload.temp[2];\nvar tempactual4=msg.payload.temp[3];\n\nvar activacion1=0;\nvar activacion2=0;\nvar activacion3=0;\nvar activacion4=0;\n\nif (tempmax1<tempactual1 || man1==true ){\n    \n    activacion1=1;\n}\n\nif (tempmax2<tempactual2 || man2==true ){\n    \n    activacion2=1;\n}\n\nif (tempmax3<tempactual3 || man3==true ){\n    \n    activacion3=1;\n    \n}\n\nif (tempmax4<tempactual4 || man4==true ){\n    \n    activacion4=1;\n}\n\n\nlet array = [activacion1,activacion2,activacion3,activacion4];\n\nmsg.payload=array;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 2560,
+        "wires": [
+            [
+                "181a8768976a4895"
+            ]
+        ]
+    },
+    {
+        "id": "181a8768976a4895",
+        "type": "mqtt out",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "topic": "II6/ESP_5037548/Ventiladores",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ddaab1a97220a7d",
+        "x": 930,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "fd3cfd6e26793859",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vertmanual1",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 2180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a2a8aa0259f08b3",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vertmanual2",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 2260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac8ce80892e32879",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vertmanual3",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 2340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae27a70b5d586667",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vertmanual4",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 2420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a80a4e6a2a886ba",
+        "type": "mqtt in",
+        "z": "e40071997f8cc7b9",
+        "name": "Datos sensores de sensores y ventiladores",
+        "topic": "II6/ESP_5037548/DATOS",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ddaab1a97220a7d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 260,
+        "y": 2560,
+        "wires": [
+            [
+                "a62879c229c87aec"
+            ]
+        ]
+    },
+    {
+        "id": "ef2e42f1ead0963b",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Led Vent2",
+        "func": "var vent =msg.payload.vent[1]\nmsg.payload=vent;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 1780,
+        "wires": [
+            [
+                "c67575f428f4400b"
+            ]
+        ]
+    },
+    {
+        "id": "c953797d7006c189",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Led Vent3",
+        "func": "var vent =msg.payload.vent[2]\nmsg.payload=vent;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 1840,
+        "wires": [
+            [
+                "5f581e1ecdfbd790"
+            ]
+        ]
+    },
+    {
+        "id": "1e5aac74311d94a3",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Led Vent4",
+        "func": "var vent =msg.payload.vent[3]\nmsg.payload=vent;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 1900,
+        "wires": [
+            [
+                "ba4acc6ca8e65851"
+            ]
+        ]
+    },
+    {
+        "id": "ba09c8fbb6f2b7bd",
+        "type": "json",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 1720,
+        "wires": [
+            [
+                "ef2e42f1ead0963b",
+                "c953797d7006c189",
+                "1e5aac74311d94a3",
+                "9d1ce0e63be42a0c"
+            ]
+        ]
+    },
+    {
+        "id": "a62879c229c87aec",
+        "type": "json",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 2560,
+        "wires": [
+            [
+                "bf29f071e99446bc"
+            ]
+        ]
+    },
+    {
+        "id": "9d1ce0e63be42a0c",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Led Vent1",
+        "func": "var vent=msg.payload.vent[0]\nmsg.payload=vent;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 1720,
+        "wires": [
+            [
+                "cd1d844e8b5b3590"
+            ]
+        ]
+    },
+    {
+        "id": "4310aef53e215da8",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "manejo iluminacion",
+        "func": "var resistencia=msg.payload.iluminacion;\nconst luminosidad = [\"Muy luminoso\", \"Luminoso\", \"Poco luminoso\", \"Oscuro\"];\nvar i;\n\nif (resistencia < 100) {\n    i = \"Oscuro\";\n} else if (resistencia >= 100 && resistencia < 250) {\n    i = \"Poco luminoso\";\n} else if (resistencia >= 250 && resistencia < 400) {\n    i = \"Luminoso\";\n} else if (resistencia >= 400) {\n    i = \"Muy luminoso\";\n}\n\nmsg.payload=i;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 420,
+        "wires": [
+            [
+                "a6be1ba13c001695"
+            ]
+        ]
+    },
+    {
+        "id": "8cb7fad1935c5b4f",
+        "type": "json",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 570,
+        "y": 840,
+        "wires": [
+            [
+                "3298b922682d4cf8"
+            ]
+        ]
+    },
+    {
+        "id": "36554881fef58f7d",
+        "type": "mqtt in",
+        "z": "e40071997f8cc7b9",
+        "name": "Datos generacion",
+        "topic": "II6/ESP_1541673/Gen",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ddaab1a97220a7d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 140,
+        "y": 840,
+        "wires": [
+            [
+                "8cb7fad1935c5b4f"
+            ]
+        ]
+    },
+    {
+        "id": "48f6a69c71389646",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "genera datos gráfica",
+        "func": "var arraytemp=[];\nvar arrayhum=[];\n\n// los arrays usados en la represenstación gráfica deben contener objetos JSON con dos campos: {x , y}\n// en x debemos poner la hora en formato \"timestamp\". Si tenemos un objeto fecha se puede convertir usando el método getTime()\n// en y debemos poner el valor de la variable\n// mas info en: https://github.com/node-red/node-red-dashboard/blob/master/Charts.md\n\nif(Array.isArray(msg.payload) && msg.payload.length>0)\n{\n    for (var i = 0; i < msg.payload.length; i++) { // añade datos a los arrays\n        arraytemp.push({x : msg.payload[i].date.getTime() , y : msg.payload[i].temp[0]});\n        arrayhum.push({x : msg.payload[i].date.getTime() , y : msg.payload[i].hum[0]});\n    }\n}\n    \nmsg.payload = [{\n        \"series\":[\"Temperatura (ºC)\",\"Humedad(%)\"],\n        \"data\":[arraytemp, arrayhum],\n        \"labels\":[\"\"]\n        }];\n\nreturn msg;  ",
+        "outputs": "1",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 2880,
+        "wires": [
+            [
+                "9672eb4ad3a811fb"
+            ]
+        ]
+    },
+    {
+        "id": "cc084f06daf819c7",
+        "type": "mongodb in",
+        "z": "e40071997f8cc7b9",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 790,
+        "y": 2900,
+        "wires": [
+            [
+                "48f6a69c71389646"
+            ]
+        ]
+    },
+    {
+        "id": "7145b33b1a456508",
+        "type": "ui_date_picker",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "label": "Fecha final",
+        "group": "a2d24b62e1a856a9",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 130,
+        "y": 3080,
+        "wires": [
+            [
+                "a847ae2f389634ff",
+                "21e49dbc08b197ef"
+            ]
+        ]
+    },
+    {
+        "id": "a847ae2f389634ff",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "hasta1",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 3120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e5292b0993dedac",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "desde1",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 2940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6875758bd2dda20e",
+        "type": "ui_date_picker",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "label": "Fecha inicio",
+        "group": "a2d24b62e1a856a9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 130,
+        "y": 2980,
+        "wires": [
+            [
+                "6e5292b0993dedac",
+                "21e49dbc08b197ef"
+            ]
+        ]
+    },
+    {
+        "id": "00b25dd8f9631d3d",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "genera datos gráfica",
+        "func": "var arraytemp=[];\nvar arrayhum=[];\n\n// los arrays usados en la represenstación gráfica deben contener objetos JSON con dos campos: {x , y}\n// en x debemos poner la hora en formato \"timestamp\". Si tenemos un objeto fecha se puede convertir usando el método getTime()\n// en y debemos poner el valor de la variable\n// mas info en: https://github.com/node-red/node-red-dashboard/blob/master/Charts.md\n\nif(Array.isArray(msg.payload) && msg.payload.length>0)\n{\n    for (var i = 0; i < msg.payload.length; i++) { // añade datos a los arrays\n        arraytemp.push({x : msg.payload[i].date.getTime() , y : msg.payload[i].temp[1]});\n        arrayhum.push({x : msg.payload[i].date.getTime() , y : msg.payload[i].hum[1]});\n    }\n}\n\n\n\nmsg.payload = [{\n        \"series\":[\"Temperatura (ºC)\",\"Humedad(%)\"],\n        \"data\":[arraytemp, arrayhum],\n        \"labels\":[\"\"]\n        }];\n\nreturn msg;  ",
+        "outputs": "1",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 3000,
+        "wires": [
+            [
+                "5259b955c9a5b990"
+            ]
+        ]
+    },
+    {
+        "id": "60ac119a82b4dd74",
+        "type": "mongodb in",
+        "z": "e40071997f8cc7b9",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 790,
+        "y": 3040,
+        "wires": [
+            [
+                "00b25dd8f9631d3d"
+            ]
+        ]
+    },
+    {
+        "id": "9e76bef26e5aca89",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "genera datos gráfica",
+        "func": "var arraytemp=[];\nvar arrayhum=[];\n\n// los arrays usados en la represenstación gráfica deben contener objetos JSON con dos campos: {x , y}\n// en x debemos poner la hora en formato \"timestamp\". Si tenemos un objeto fecha se puede convertir usando el método getTime()\n// en y debemos poner el valor de la variable\n// mas info en: https://github.com/node-red/node-red-dashboard/blob/master/Charts.md\n\nif(Array.isArray(msg.payload) && msg.payload.length>0)\n{\n    for (var i = 0; i < msg.payload.length; i++) { // añade datos a los arrays\n        arraytemp.push({x : msg.payload[i].date.getTime() , y : msg.payload[i].temp[2]});\n        arrayhum.push({x : msg.payload[i].date.getTime() , y : msg.payload[i].hum[2]});\n    }\n}\n\n\n\nmsg.payload = [{\n        \"series\":[\"Temperatura (ºC)\",\"Humedad(%)\"],\n        \"data\":[arraytemp, arrayhum],\n        \"labels\":[\"\"]\n        }];\n\nreturn msg;  ",
+        "outputs": "1",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 3180,
+        "wires": [
+            [
+                "968deab87a9c4a13"
+            ]
+        ]
+    },
+    {
+        "id": "7423e9570b81e570",
+        "type": "mongodb in",
+        "z": "e40071997f8cc7b9",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 790,
+        "y": 3180,
+        "wires": [
+            [
+                "9e76bef26e5aca89"
+            ]
+        ]
+    },
+    {
+        "id": "bab444b2dc4bd973",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "genera datos gráfica",
+        "func": "var arraytemp=[];\nvar arrayhum=[];\n\n// los arrays usados en la represenstación gráfica deben contener objetos JSON con dos campos: {x , y}\n// en x debemos poner la hora en formato \"timestamp\". Si tenemos un objeto fecha se puede convertir usando el método getTime()\n// en y debemos poner el valor de la variable\n// mas info en: https://github.com/node-red/node-red-dashboard/blob/master/Charts.md\n\nif(Array.isArray(msg.payload) && msg.payload.length>0)\n{\n    for (var i = 0; i < msg.payload.length; i++) { // añade datos a los arrays\n        arraytemp.push({x : msg.payload[i].date.getTime() , y : msg.payload[i].temp[3]});\n        arrayhum.push({x : msg.payload[i].date.getTime() , y : msg.payload[i].hum[3]});\n    }\n}\n\n\n\nmsg.payload = [{\n        \"series\":[\"Temperatura (ºC)\",\"Humedad(%)\"],\n        \"data\":[arraytemp, arrayhum],\n        \"labels\":[\"\"]\n        }];\n\nreturn msg;  ",
+        "outputs": "1",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 3400,
+        "wires": [
+            [
+                "c7cbf6bef9f2a03a"
+            ]
+        ]
+    },
+    {
+        "id": "b4efd50bc754f07d",
+        "type": "mongodb in",
+        "z": "e40071997f8cc7b9",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 770,
+        "y": 3400,
+        "wires": [
+            [
+                "bab444b2dc4bd973"
+            ]
+        ]
+    },
+    {
+        "id": "c54147079b5ad7b1",
+        "type": "ui_button",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "group": "a2d24b62e1a856a9",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Último día",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 3200,
+        "wires": [
+            [
+                "3084cf79f169516f"
+            ]
+        ]
+    },
+    {
+        "id": "896a7f8d9b9cebaa",
+        "type": "ui_button",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "group": "a2d24b62e1a856a9",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Últimos 7 días",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 3280,
+        "wires": [
+            [
+                "10424552fc7b765d"
+            ]
+        ]
+    },
+    {
+        "id": "e8a157106953316a",
+        "type": "ui_button",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "group": "a2d24b62e1a856a9",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Últimos 30 días",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 3380,
+        "wires": [
+            [
+                "adca98a26c679497"
+            ]
+        ]
+    },
+    {
+        "id": "3084cf79f169516f",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var ms_per_day =86400000;\nvar now_ms= new Date().getTime();\n\nvar un_dia = new Date(now_ms-ms_per_day);\n\nvar inicio = new Date(un_dia.getFullYear(),un_dia.getMonth(),un_dia.getDate(),0,0,0,0);\n\nmsg.payload={\"date\":{\"$gte\":un_dia}};\n\nmsg.sort = {\"date\": -1};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 3200,
+        "wires": [
+            [
+                "cc084f06daf819c7",
+                "7423e9570b81e570",
+                "b4efd50bc754f07d",
+                "60ac119a82b4dd74"
+            ]
+        ]
+    },
+    {
+        "id": "10424552fc7b765d",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var ms_per_day =86400000;\nvar now_ms= new Date().getTime();\n\nvar un_dia = new Date(now_ms-7*ms_per_day);\n\nvar inicio = new Date(un_dia.getFullYear(),un_dia.getMonth(),un_dia.getDate(),0,0,0,0);\n\nmsg.payload={\"date\":{\"$gte\":un_dia}};\n\nmsg.sort = {\"date\": -1};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 3280,
+        "wires": [
+            [
+                "cc084f06daf819c7",
+                "7423e9570b81e570",
+                "b4efd50bc754f07d"
+            ]
+        ]
+    },
+    {
+        "id": "adca98a26c679497",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "var ms_per_day =86400000;\nvar now_ms= new Date().getTime();\n\nvar un_dia = new Date(now_ms-7*ms_per_day);\n\nvar inicio = new Date(un_dia.getFullYear(),un_dia.getMonth(),un_dia.getDate(),0,0,0,0);\n\nmsg.payload={\"date\":{\"$gte\":un_dia}};\n\nmsg.sort = {\"date\": -1};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 3380,
+        "wires": [
+            [
+                "cc084f06daf819c7",
+                "60ac119a82b4dd74",
+                "7423e9570b81e570"
+            ]
+        ]
+    },
+    {
+        "id": "9672eb4ad3a811fb",
+        "type": "ui_chart",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "group": "a0d7591a4ab07e5a",
+        "order": 1,
+        "width": "5",
+        "height": "5",
+        "label": "Parcela 1",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "D/M",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1320,
+        "y": 2880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b2a1c96a80b7959",
+        "type": "mongodb out",
+        "z": "e40071997f8cc7b9",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 2710,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "ab9fb9b850388f8d",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "+ fecha",
+        "func": "msg.payload.date = new Date();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2500,
+        "y": 500,
+        "wires": [
+            [
+                "1b2a1c96a80b7959"
+            ]
+        ]
+    },
+    {
+        "id": "a2cbaa9455bd297a",
+        "type": "json",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 2330,
+        "y": 500,
+        "wires": [
+            [
+                "ab9fb9b850388f8d"
+            ]
+        ]
+    },
+    {
+        "id": "2764025dd39d3e91",
+        "type": "mqtt in",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "topic": "II6/ESP_5037548/DATOS",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e77f4c9f021c5920",
+        "nl": false,
+        "rap": false,
+        "x": 2110,
+        "y": 500,
+        "wires": [
+            [
+                "a2cbaa9455bd297a"
+            ]
+        ]
+    },
+    {
+        "id": "5259b955c9a5b990",
+        "type": "ui_chart",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "group": "608a07173c1c7831",
+        "order": 1,
+        "width": "5",
+        "height": "5",
+        "label": "Parcela 2",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "D/M",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1340,
+        "y": 3000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "968deab87a9c4a13",
+        "type": "ui_chart",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "group": "f56d69f5baa25cbd",
+        "order": 1,
+        "width": "5",
+        "height": "5",
+        "label": "Parcela 3",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "D/M",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1340,
+        "y": 3180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7cbf6bef9f2a03a",
+        "type": "ui_chart",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "group": "890ec7807f76b7b9",
+        "order": 1,
+        "width": "5",
+        "height": "5",
+        "label": "Parcela 4",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "D/M",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1320,
+        "y": 3400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21e49dbc08b197ef",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "// fecha por defecto es hoy\nvar ahora = new Date();\n// pillo los globales si los hay, si no la fecha de hoy\nvar desde = new Date(global.get(\"desde1\"));\nvar hasta = new Date(global.get(\"hasta1\")); \n// el día de inicio desde las cero horas\nvar inicio = new Date(desde.getFullYear(),desde.getMonth(),desde.getDate(),0,0,0,0);\n// el día final es hasta final del día\nvar final = new Date(hasta.getFullYear(),hasta.getMonth(),hasta.getDate(),23,59,59,999);\n\nmsg.payload={\"$and\":[{\"date\":{\"$lte\":final}},{\"date\":{\"$gte\":inicio}}]};\n\nmsg.sort = {\"date\": -1};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 3040,
+        "wires": [
+            [
+                "cc084f06daf819c7"
+            ]
+        ]
+    },
+    {
+        "id": "15f4cef9f17a7b86",
+        "type": "ui_switch",
+        "z": "e40071997f8cc7b9",
+        "name": "separdor decimal",
+        "label": "{{msg.topic}}",
+        "tooltip": "",
+        "group": "fac03ab2304ed6c6",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 150,
+        "y": 4500,
+        "wires": [
+            [
+                "c0e90cac5ef079c2"
+            ]
+        ]
+    },
+    {
+        "id": "2b023444a3ccd824",
+        "type": "inject",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 130.99706649780273,
+        "y": 4422.911881446838,
+        "wires": [
+            [
+                "c0e90cac5ef079c2"
+            ]
+        ]
+    },
+    {
+        "id": "c0e90cac5ef079c2",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "set global separador_decimal",
+        "func": "if(msg.payload===true)\n{\n    global.set(\"separador_decimal\",\"coma\");\n    msg.topic=\"separador decimal = coma\";\n}\nelse\n{\n    global.set(\"separador_decimal\",\"punto\");\n    msg.topic=\"separador decimal = punto\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 459.0084533691406,
+        "y": 4423.619254112244,
+        "wires": [
+            [
+                "15f4cef9f17a7b86"
+            ]
+        ]
+    },
+    {
+        "id": "6af025321d0079e2",
+        "type": "comment",
+        "z": "e40071997f8cc7b9",
+        "name": "Selector de separador decimal",
+        "info": "",
+        "x": 143.01123046875,
+        "y": 4362.574006080627,
+        "wires": []
+    },
+    {
+        "id": "bae0ef9e06938124",
+        "type": "http response",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "Content-Disposition": "attachment; filename=registros.csv"
+        },
+        "x": 1163.985523223877,
+        "y": 4202.994386672974,
+        "wires": []
+    },
+    {
+        "id": "a8f94e0c6949b69b",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "Unicode y separador",
+        "func": "//add Unicode BOM character (byte order mark) to make EXCEL knows this is UTF-8\nif(global.get(\"separador_decimal\")==\"punto\")\n{\n    msg.payload='\\ufeff'+msg.payload;\n\n}\nelse\n{\n    msg.payload='\\ufeff'+(msg.payload).replace(/\\./g,\",\");\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 993.9856491088867,
+        "y": 4202.994316101074,
+        "wires": [
+            [
+                "bae0ef9e06938124"
+            ]
+        ]
+    },
+    {
+        "id": "09aaff2c5c250b97",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "consulta",
+        "func": "// fecha por defecto es hoy\nvar ahora = new Date();\n// pillo los globales si los hay, si no la fecha de hoy\nvar desde = new Date(global.get(\"desde2\") || ahora);\nvar hasta = new Date(global.get(\"hasta2\") || ahora); \n// el día de inicio desde las cero horas\nvar inicio = new Date(desde.getFullYear(),desde.getMonth(),desde.getDate(),0,0,0,0);\n// el día final es hasta final del día\nvar final = new Date(hasta.getFullYear(),hasta.getMonth(),hasta.getDate(),23,59,59,999);\n\nmsg.payload=\n[\n    { \"$match\": { \"date\": { \"$gte\": inicio , \"$lte\": final } } },\n    { \"$project\": {\n        \"_id\": 0,\n        \"date\": 1,\n        \"temperatura(P1/P2/P3/P4)\":\"$temp\",\n        \"humedad(P1/P2/P3/P4)\":\"$hum\",\n        }\n    },\n    { \"$sort\": {\"date\": -1} }\n];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 277.9857864379883,
+        "y": 4199.994329452515,
+        "wires": [
+            [
+                "fad88876cc86eda7"
+            ]
+        ]
+    },
+    {
+        "id": "b36e56d7d2dbbfcb",
+        "type": "http in",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "url": "/registros",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 108.98578643798828,
+        "y": 4202.994316101074,
+        "wires": [
+            [
+                "09aaff2c5c250b97"
+            ]
+        ]
+    },
+    {
+        "id": "72718a2ee5fc7a46",
+        "type": "ui_template",
+        "z": "e40071997f8cc7b9",
+        "group": "fac03ab2304ed6c6",
+        "name": "",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "format": "<style>\n.button {\n    text-align: center;\n    font: bold 17px Arial;\n    text-decoration: none;\n    background-color: #339966;\n    color: white;\n    padding: 8px 10px;\n    border: 2px solid #CCCCCC;\n  }\n  \n  .button:hover\n  {\n   background-color: #26734d;\n  }\n\n</style>\n<a href=\"/registros\" class=\"button\">Descarga registros en CSV (EXCEL)</a>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 127.98580932617188,
+        "y": 4094.994149208069,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e221bdce9d57034",
+        "type": "csv",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "sep": ";",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "date, temperatura(P1/P2/P3/P4), humedad(P1/P2/P3/P4)",
+        "skip": 0,
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 812.9857940673828,
+        "y": 4202.994293212891,
+        "wires": [
+            [
+                "a8f94e0c6949b69b"
+            ]
+        ]
+    },
+    {
+        "id": "5f89a6a1f922f2b4",
+        "type": "comment",
+        "z": "e40071997f8cc7b9",
+        "name": "Botón en HTML para lanzar descarga de fichero",
+        "info": "",
+        "x": 237.77556610107422,
+        "y": 4047.076602935791,
+        "wires": []
+    },
+    {
+        "id": "909e058a970f5567",
+        "type": "comment",
+        "z": "e40071997f8cc7b9",
+        "name": "Flujo para descarga de fichero",
+        "info": "",
+        "x": 179.99999237060547,
+        "y": 4144.999969482422,
+        "wires": []
+    },
+    {
+        "id": "fad88876cc86eda7",
+        "type": "mongodb in",
+        "z": "e40071997f8cc7b9",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "aggregate",
+        "x": 527.9857864379883,
+        "y": 4199.994329452515,
+        "wires": [
+            [
+                "6e221bdce9d57034"
+            ]
+        ]
+    },
+    {
+        "id": "a77c622e7fe97e56",
+        "type": "comment",
+        "z": "e40071997f8cc7b9",
+        "name": "Controles para seleccionar fechas",
+        "info": "",
+        "x": 160,
+        "y": 2820,
+        "wires": []
+    },
+    {
+        "id": "c61c6ec528426482",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "+ fecha",
+        "func": "var man1=flow.get(\"vertmanual1\");\nvar man2=flow.get(\"vertmanual2\");\nvar man3=flow.get(\"vertmanual3\");\nvar man4=flow.get(\"vertmanual4\");\n\n\nif (man1==true){\n\n    man1=\"activado\";\n\n} \nelse {\n\n    man1=\"desactivado\";\n}\n\nif (man2==true){\n\n    man2=\"activado\";\n\n} \nelse {\n\n    man2=\"desactivado\";\n}\n\nif (man3==true){\n\n    man3=\"activado\";\n\n} \nelse {\n\n    man3=\"desactivado\";\n}\n\nif (man4==true){\n\n    man4=\"activado\";\n\n} \nelse {\n\n    man4=\"desactivado\";\n}\n\nmsg.payload={\n  \"Actv1\": man1,\n  \"Actv2\": man2,\n  \"Actv3\": man3,\n  \"Actv4\":  man4}\n\nmsg.payload.date = new Date();\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 2220,
+        "wires": [
+            [
+                "5720599a8b373757"
+            ]
+        ]
+    },
+    {
+        "id": "fe2f498e2fbf96d7",
+        "type": "mqtt in",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "topic": "II6/ESP_5037548/Activacion",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e77f4c9f021c5920",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 220,
+        "y": 2660,
+        "wires": [
+            [
+                "a505b062f3ef6ede"
+            ]
+        ]
+    },
+    {
+        "id": "5720599a8b373757",
+        "type": "mqtt out",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "topic": "II6/ESP_5037548/Activacion",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e77f4c9f021c5920",
+        "x": 1120,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "048ac10c7757b8b7",
+        "type": "mongodb out",
+        "z": "e40071997f8cc7b9",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "activacion",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 940,
+        "y": 2660,
+        "wires": []
+    },
+    {
+        "id": "f3bdf01a3bd8f8e7",
+        "type": "ui_template",
+        "z": "e40071997f8cc7b9",
+        "group": "7baaf733359ea1ee",
+        "name": "",
+        "order": 1,
+        "width": "6",
+        "height": "8",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 2420,
+        "y": 2600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "735db81f4e822038",
+        "type": "function",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "func": "\nmsg.payload={};\nmsg.sort={\"date\" : -1}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1440,
+        "y": 2600,
+        "wires": [
+            [
+                "4c6af3a92f3242f6"
+            ]
+        ]
+    },
+    {
+        "id": "42c30336f4514252",
+        "type": "ui_slider",
+        "z": "e40071997f8cc7b9",
+        "name": "Ajuste temperatura parcela 3",
+        "label": "Ajuste temperatura parcela 4",
+        "tooltip": "",
+        "group": "5d6a390d24c89e24",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "x": 160,
+        "y": 1200,
+        "wires": [
+            [
+                "3b6f43d04ebd555e",
+                "60515393c21eb865",
+                "2bf0b7c1e127c269"
+            ]
+        ]
+    },
+    {
+        "id": "4c6af3a92f3242f6",
+        "type": "mongodb in",
+        "z": "e40071997f8cc7b9",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "activacion",
+        "operation": "find",
+        "x": 1700,
+        "y": 2600,
+        "wires": [
+            [
+                "85fc60e982eb32f5"
+            ]
+        ]
+    },
+    {
+        "id": "a505b062f3ef6ede",
+        "type": "json",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 2660,
+        "wires": [
+            [
+                "048ac10c7757b8b7"
+            ]
+        ]
+    },
+    {
+        "id": "85fc60e982eb32f5",
+        "type": "template",
+        "z": "e40071997f8cc7b9",
+        "name": "lista en formato html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": " <h1>Registros: </h1>\n <ul>\n{{#payload}}\n  <li>{{date}} : Ventilador 1:{{Actv1}}, Ventilador 2:{{Actv2}},Ventilador 3:{{Actv3}} ,Ventilador 4:{{Actv4}}  </li>\n{{/payload}}\n </ul>",
+        "output": "str",
+        "x": 2140,
+        "y": 2600,
+        "wires": [
+            [
+                "f3bdf01a3bd8f8e7"
+            ]
+        ]
+    },
+    {
+        "id": "abf84607152829a5",
+        "type": "ui_date_picker",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "label": "Fecha final",
+        "group": "fac03ab2304ed6c6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 750,
+        "y": 4500,
+        "wires": [
+            [
+                "5bd66d78d0a964bf"
+            ]
+        ]
+    },
+    {
+        "id": "5bd66d78d0a964bf",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "hasta2",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 4500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e76f6c24cb5eb66",
+        "type": "change",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "desde2",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 4420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "42938bbb7f9743f7",
+        "type": "ui_date_picker",
+        "z": "e40071997f8cc7b9",
+        "name": "",
+        "label": "Fecha inicio",
+        "group": "fac03ab2304ed6c6",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 750,
+        "y": 4420,
+        "wires": [
+            [
+                "2e76f6c24cb5eb66"
+            ]
+        ]
+    },
+    {
+        "id": "d64870f66df92460",
+        "type": "mqtt in",
+        "z": "e40071997f8cc7b9",
+        "name": "Datos sensores de sensores y ventiladores",
+        "topic": "II6/ESP_5037548/DATOS",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ddaab1a97220a7d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 1500,
+        "y": 2440,
+        "wires": [
+            [
+                "735db81f4e822038"
+            ]
+        ]
+    },
+    {
+        "id": "cfa4f27a8e419d08",
+        "type": "ui_spacer",
+        "z": "e40071997f8cc7b9",
+        "name": "spacer",
+        "group": "0a4221cca746bf13",
+        "order": 2,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "c987426109b93198",
+        "type": "ui_spacer",
+        "z": "e40071997f8cc7b9",
+        "name": "spacer",
+        "group": "0a4221cca746bf13",
+        "order": 4,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "1dab0d9beff3d758",
+        "type": "ui_spacer",
+        "z": "e40071997f8cc7b9",
+        "name": "spacer",
+        "group": "0a4221cca746bf13",
+        "order": 6,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "655feb1ea502e06f",
+        "type": "ui_spacer",
+        "z": "e40071997f8cc7b9",
+        "name": "spacer",
+        "group": "14a26e1f461829cf",
+        "order": 2,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "139e785288889f1f",
+        "type": "ui_spacer",
+        "z": "e40071997f8cc7b9",
+        "name": "spacer",
+        "group": "14a26e1f461829cf",
+        "order": 4,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "254895776855fb91",
+        "type": "ui_spacer",
+        "z": "e40071997f8cc7b9",
+        "name": "spacer",
+        "group": "14a26e1f461829cf",
+        "order": 6,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "5d6a390d24c89e24",
+        "type": "ui_group",
+        "name": "Ajuste de temperatura de las parcelas parcelas",
+        "tab": "b38f83eccee74360",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3e4e6ece72e0d49d",
+        "type": "ui_group",
+        "name": "Activación manual de ventiladores",
+        "tab": "b38f83eccee74360",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e72faadef87ef1d6",
+        "type": "ui_group",
+        "name": "Estado de los ventiladores",
+        "tab": "b38f83eccee74360",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6ddaab1a97220a7d",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0a4221cca746bf13",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "d204b52a8a266b9b",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "14a26e1f461829cf",
+        "type": "ui_group",
+        "name": "Humedad parcela",
+        "tab": "d204b52a8a266b9b",
+        "order": 3,
+        "disp": true,
+        "width": 5,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "695d3500ef2e5d34",
+        "type": "ui_group",
+        "name": "Funcionamiento sensores",
+        "tab": "d204b52a8a266b9b",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "740314aea7c69146",
+        "type": "ui_group",
+        "name": "Otros datos",
+        "tab": "d204b52a8a266b9b",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3752afa1.deaf9",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II6",
+        "name": ""
+    },
+    {
+        "id": "a2d24b62e1a856a9",
+        "type": "ui_group",
+        "name": "Selecion de fechas",
+        "tab": "a4c44174311009c3",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a0d7591a4ab07e5a",
+        "type": "ui_group",
+        "name": "Parcela 1",
+        "tab": "a4c44174311009c3",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e77f4c9f021c5920",
+        "type": "mqtt-broker",
+        "name": "II6",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "608a07173c1c7831",
+        "type": "ui_group",
+        "name": "Parcela 2",
+        "tab": "a4c44174311009c3",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f56d69f5baa25cbd",
+        "type": "ui_group",
+        "name": "Parcela 3",
+        "tab": "a4c44174311009c3",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "890ec7807f76b7b9",
+        "type": "ui_group",
+        "name": "Parcela 4",
+        "tab": "a4c44174311009c3",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fac03ab2304ed6c6",
+        "type": "ui_group",
+        "name": "Grupo descarga",
+        "tab": "e07845ffcb11392a",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "7baaf733359ea1ee",
+        "type": "ui_group",
+        "name": "Registro activación de ventilacion",
+        "tab": "b38f83eccee74360",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b38f83eccee74360",
+        "type": "ui_tab",
+        "name": "Control de ventiladores",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d204b52a8a266b9b",
+        "type": "ui_tab",
+        "name": "Datos del invernadero",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a4c44174311009c3",
+        "type": "ui_tab",
+        "name": "Graficas",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e07845ffcb11392a",
+        "type": "ui_tab",
+        "name": "Descarga de datos",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    }
+]
