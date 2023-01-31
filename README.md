@@ -8,7 +8,11 @@ El contenido de este repositorio es el codigo arduino correspondiente al proyect
 - Pablo Jesús Gutiérrez Cobos
 
 
-Los archivos incluidos son:
+El proyecto busca mostrar la viabilidad de la domotización de varias parcelas de invernadero aplicando el IoT y creando un prototipo funcional que ilustre el comportamiento deseado de las instalaciones.
+
+
+
+Los archivos de código generados son:
 
 [Codigo de los sensores](primero.ino)
 [Archivo json](json)
