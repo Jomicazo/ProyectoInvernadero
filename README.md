@@ -14,5 +14,6 @@ El proyecto busca mostrar la viabilidad de la domotización de varias parcelas d
 
 Los archivos de código generados son:
 
-[Codigo de los sensores](primero.ino)
-[Archivo json](json)
+[Codigo de los sensores](CodigoSensoresEneroV5texto.ino)
+
+[Archivo json](flowpaginaweb.json)
