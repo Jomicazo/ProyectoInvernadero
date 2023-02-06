@@ -16,4 +16,14 @@ Los archivos de código generados son:
 
 [Codigo de los sensores](CodigoSensoresEneroV5texto.ino)
 
-[Archivo json](flowpaginaweb.json)
+[Pagina Web](flowpaginaweb.json)
+
+[Bot telegram](flows_Telegram_Proyecto.json)
+
+[Riego](ControlRIEGOModificado.ino)
+
+[Riegoautomatico](RIEGO.json)
+
+[Paneles solares](panelsolar.ino)
+
+[FOTA](FOTAGRUPO6 .json)
