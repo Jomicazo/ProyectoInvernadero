@@ -26,4 +26,4 @@ Los archivos de código generados son:
 
 [Paneles solares](panelsolar.ino)
 
-[FOTA](FOTAGRUPO6 .json)
+[FOTA](FOTAGRUPO6.json)
