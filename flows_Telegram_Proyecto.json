@@ -1,0 +1,2480 @@
+[
+    {
+        "id": "4119093c6d964c05",
+        "type": "tab",
+        "label": "TELEGRAM",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "eae5c496c1150cc6",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 620,
+        "wires": [
+            [
+                "e3e50a59f5fa7306"
+            ]
+        ]
+    },
+    {
+        "id": "e3e50a59f5fa7306",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 620,
+        "y": 620,
+        "wires": [
+            [
+                "5f5a1cb9427db2cb"
+            ]
+        ]
+    },
+    {
+        "id": "5f5a1cb9427db2cb",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "7db5df5921b0a886",
+        "type": "inject",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 620,
+        "wires": [
+            [
+                "eae5c496c1150cc6"
+            ]
+        ]
+    },
+    {
+        "id": "ca51a9e0afd1c37a",
+        "type": "inject",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{}",
+        "payloadType": "json",
+        "x": 350,
+        "y": 680,
+        "wires": [
+            [
+                "e3e50a59f5fa7306"
+            ]
+        ]
+    },
+    {
+        "id": "458065a632176821",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "c99ffe1f97ea04d9",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje bienvenida",
+        "func": "if(msg.payload.content.substring(0,1)!=\"/\")\n{\n msg.payload.content=\"Hola, soy el bot de telegram para el proyecto del grupo 6 de Informática Industrial. Puedo responderte a estos comandos:\\n/start\\n/Parcela1\\n/Parcela2\\n/Parcela3\\n/Parcela4\\n/Tanque\\n/Riego\\n/Iluminacion\\n/Paneles_Solares\";\n return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 880,
+        "wires": [
+            [
+                "c9d07e0e884414e9"
+            ]
+        ]
+    },
+    {
+        "id": "c5f75a2945a9c77e",
+        "type": "mongodb out",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 790,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b4903ac7f99e8797",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "+ fecha",
+        "func": "msg.payload.date = new Date();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 120,
+        "wires": [
+            [
+                "c5f75a2945a9c77e"
+            ]
+        ]
+    },
+    {
+        "id": "6df7af9d61c8e8e9",
+        "type": "json",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 120,
+        "wires": [
+            [
+                "3d649696e0eb290e",
+                "b4903ac7f99e8797"
+            ]
+        ]
+    },
+    {
+        "id": "b49b809320d982cc",
+        "type": "mqtt in",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "topic": "II6/ESP_5037548/DATOS",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e77f4c9f021c5920",
+        "nl": false,
+        "rap": false,
+        "x": 191.2272720336914,
+        "y": 123.2329969406128,
+        "wires": [
+            [
+                "6df7af9d61c8e8e9"
+            ]
+        ]
+    },
+    {
+        "id": "3d649696e0eb290e",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "PRUEBA DATOS",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "56709a5657f82330",
+        "type": "telegram receiver",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "bot": "3d2ef32bad8b37db",
+        "saveDataDir": "",
+        "filterCommands": true,
+        "x": 170,
+        "y": 800,
+        "wires": [
+            [
+                "458065a632176821",
+                "c99ffe1f97ea04d9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e15001790e0113c8",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/start",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 880,
+        "wires": [
+            [
+                "c99ffe1f97ea04d9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c9d07e0e884414e9",
+        "type": "telegram sender",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "bot": "3d2ef32bad8b37db",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4b5a56b43b7714f",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1800,
+        "wires": [
+            [
+                "b5f86b0e7b9cef9d"
+            ]
+        ]
+    },
+    {
+        "id": "c7a5f9aee1b0d6c1",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var temperatura = msg.payload[0].temp[0];\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La temperatura es de \"+temperatura+\" ºC.\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1800,
+        "wires": [
+            [
+                "b32ca891115571cc",
+                "b41b594e50732f78"
+            ]
+        ]
+    },
+    {
+        "id": "db5515070d048505",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Temperatura_Parcela1",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 1800,
+        "wires": [
+            [
+                "d4b5a56b43b7714f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b32ca891115571cc",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Temperatura 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "98a16b89ffe913a7",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1920,
+        "wires": [
+            [
+                "2475277ecbb952c1"
+            ]
+        ]
+    },
+    {
+        "id": "956964ece3fbc58b",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var humedad = msg.payload[0].hum[0];\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La humedad es del \"+humedad+\" %.\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1920,
+        "wires": [
+            [
+                "6b24987b8132313c",
+                "077fb1fe747d05c1"
+            ]
+        ]
+    },
+    {
+        "id": "4ca3012f6f7087ed",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Humedad_Parcela1",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 1920,
+        "wires": [
+            [
+                "98a16b89ffe913a7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6b24987b8132313c",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Humedad 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "e148c8d368ceed21",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1560,
+        "wires": [
+            [
+                "7769db42aff5ecb2"
+            ]
+        ]
+    },
+    {
+        "id": "163a925cd7272184",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var resistencia=msg.payload[0].iluminacion;\nvar fecha=new Date();\nconst luminosidad = [\"Muy luminoso\", \"Luminoso\", \"Poco luminoso\", \"Oscuro\"];\nvar i;\n\nif (resistencia < 100) {\n    i = \"Muy luminoso\";\n} else if (resistencia >= 100 && resistencia < 250) {\n    i = \"Luminoso\";\n} else if (resistencia >= 250 && resistencia < 400) {\n    i = \"Poco luminoso\";\n} else if (resistencia >= 400) {\n    i = \"Oscuro\";\n}\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"Nivel de iluminación: \"+i+\".\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1560,
+        "wires": [
+            [
+                "80962f0e6c82248b",
+                "976b320b510d502a"
+            ]
+        ]
+    },
+    {
+        "id": "6b3c248d380084c9",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Iluminacion",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 1560,
+        "wires": [
+            [
+                "e148c8d368ceed21"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "80962f0e6c82248b",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Iluminación",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "c6dda3fa0d638512",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1320,
+        "wires": [
+            [
+                "53462530f1236369"
+            ]
+        ]
+    },
+    {
+        "id": "7202c7db368af5e5",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var tanque=msg.payload[0].Tanque;\nvar fecha=new Date();\nconst nivel = [\"bajo. Por favor, rellene el depósito\",\"a la mitad\",\"alto. Depósito lleno\"];\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"El nivel de agua del tanque está \"+nivel[tanque]+\".\\n\";\nmsg.payload.content+=\"Última actualización: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1320,
+        "wires": [
+            [
+                "2bbc2d3b03037535",
+                "018fd8e2cd09be5b"
+            ]
+        ]
+    },
+    {
+        "id": "0760259bf2ea3ff8",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Tanque",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 1320,
+        "wires": [
+            [
+                "c6dda3fa0d638512"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2bbc2d3b03037535",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Nivel",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "5d19be0fa1cbeaf4",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1680,
+        "wires": [
+            [
+                "acdb939ac2eba310"
+            ]
+        ]
+    },
+    {
+        "id": "ba3eb210f4ac544c",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var generacion=(msg.payload[0].Gen)*10/1023;\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La energía generada por las placas solares es \"+Number(generacion.toFixed(4))+\" V.\\n\";\nmsg.payload.content+=\"Última actualización: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1680,
+        "wires": [
+            [
+                "7f90fd4c11d596c6",
+                "71b8923620373afb"
+            ]
+        ]
+    },
+    {
+        "id": "7f54ff756095abf9",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Paneles_Solares",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 160,
+        "y": 1680,
+        "wires": [
+            [
+                "5d19be0fa1cbeaf4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7f90fd4c11d596c6",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Generación",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "32648ebf08b60842",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Ventilador_Parcela1",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 2040,
+        "wires": [
+            [
+                "776cc5ef284cc275"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b5f86b0e7b9cef9d",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 1800,
+        "wires": [
+            [
+                "c7a5f9aee1b0d6c1"
+            ]
+        ]
+    },
+    {
+        "id": "53462530f1236369",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "hidraulica",
+        "operation": "find",
+        "x": 640,
+        "y": 1320,
+        "wires": [
+            [
+                "7202c7db368af5e5"
+            ]
+        ]
+    },
+    {
+        "id": "acdb939ac2eba310",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "generacion",
+        "operation": "find",
+        "x": 650,
+        "y": 1680,
+        "wires": [
+            [
+                "ba3eb210f4ac544c"
+            ]
+        ]
+    },
+    {
+        "id": "776cc5ef284cc275",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 2040,
+        "wires": [
+            [
+                "6320110738ea4f06"
+            ]
+        ]
+    },
+    {
+        "id": "4831a2df85637e54",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var ventiladores=msg.payload[0].vent[0];\nvar fecha=new Date();\n\nif (ventiladores === false) {\n    i = \"inactivo\";\n} else if (ventiladores === true) {\n    i = \"activo\";\n}\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"El ventilador está \"+i+\".\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2040,
+        "wires": [
+            [
+                "5c5fa4957b53d64c",
+                "3684e1e4e12cb210"
+            ]
+        ]
+    },
+    {
+        "id": "5c5fa4957b53d64c",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Ventilador 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "68ec08284c469a2b",
+        "type": "mqtt in",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "topic": "II6/ESP_9590023/nivel_riego",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e77f4c9f021c5920",
+        "nl": false,
+        "rap": false,
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "31b5d4c4598a603f"
+            ]
+        ]
+    },
+    {
+        "id": "db5db373bbda18b2",
+        "type": "mqtt in",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "topic": "II6/ESP_1541673/Gen",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e77f4c9f021c5920",
+        "nl": false,
+        "rap": false,
+        "x": 180,
+        "y": 480,
+        "wires": [
+            [
+                "68cb6fb63b04bc4f"
+            ]
+        ]
+    },
+    {
+        "id": "179016e6725d9e42",
+        "type": "mongodb out",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "hidraulica",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 800,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ac789014dfa2d47e",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "+ fecha",
+        "func": "msg.payload.date = new Date();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 300,
+        "wires": [
+            [
+                "179016e6725d9e42"
+            ]
+        ]
+    },
+    {
+        "id": "31b5d4c4598a603f",
+        "type": "json",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 300,
+        "wires": [
+            [
+                "7be2028592b61744",
+                "ac789014dfa2d47e"
+            ]
+        ]
+    },
+    {
+        "id": "7be2028592b61744",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "PRUEBA HIDRÁULICA",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "508fb24711a11e32",
+        "type": "mongodb out",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "generacion",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 810,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "50d5694f608017a9",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "+ fecha",
+        "func": "msg.payload.date = new Date();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 480,
+        "wires": [
+            [
+                "508fb24711a11e32"
+            ]
+        ]
+    },
+    {
+        "id": "68cb6fb63b04bc4f",
+        "type": "json",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 480,
+        "wires": [
+            [
+                "ebaee99b15402f6d",
+                "50d5694f608017a9"
+            ]
+        ]
+    },
+    {
+        "id": "ebaee99b15402f6d",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "PRUEBA GENERACIÓN",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "81ef6253e4df794a",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje bienvenida",
+        "func": "if(msg.payload.content.substring(0,1)!=\"/\")\n{\n msg.payload.content=\"Ha elegido conocer información sobre la parcela 1. ¿Qué desea saber sobre ella?\\n/start\\n/Temperatura_Parcela1\\n/Humedad_Parcela1\\n/Ventilador_Parcela1\";\n return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 960,
+        "wires": [
+            [
+                "c9d07e0e884414e9"
+            ]
+        ]
+    },
+    {
+        "id": "169cb75090143c69",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Parcela1",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 960,
+        "wires": [
+            [
+                "81ef6253e4df794a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5268518a5720b1b1",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje bienvenida",
+        "func": "if(msg.payload.content.substring(0,1)!=\"/\")\n{\n msg.payload.content=\"Ha elegido conocer información sobre la parcela 2. ¿Qué desea saber sobre ella?\\n/start\\n/Temperatura_Parcela2\\n/Humedad_Parcela2\\n/Ventilador_Parcela2\";\n return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1040,
+        "wires": [
+            [
+                "c9d07e0e884414e9"
+            ]
+        ]
+    },
+    {
+        "id": "30cb616a21d6a14e",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Parcela2",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 1040,
+        "wires": [
+            [
+                "5268518a5720b1b1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c302b9a8458ba36a",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje bienvenida",
+        "func": "if(msg.payload.content.substring(0,1)!=\"/\")\n{\n msg.payload.content=\"Ha elegido conocer información sobre la parcela 3. ¿Qué desea saber sobre ella?\\n/start\\n/Temperatura_Parcela3\\n/Humedad_Parcela3\\n/Ventilador_Parcela3\";\n return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1120,
+        "wires": [
+            [
+                "c9d07e0e884414e9"
+            ]
+        ]
+    },
+    {
+        "id": "4a0dc012bb8e77a7",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Parcela3",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 1120,
+        "wires": [
+            [
+                "c302b9a8458ba36a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "03c35fb1c32535b0",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje bienvenida",
+        "func": "if(msg.payload.content.substring(0,1)!=\"/\")\n{\n msg.payload.content=\"Ha elegido conocer información sobre la parcela 4. ¿Qué desea saber sobre ella?\\n/start\\n/Temperatura_Parcela4\\n/Humedad_Parcela4\\n/Ventilador_Parcela4\";\n return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1200,
+        "wires": [
+            [
+                "c9d07e0e884414e9"
+            ]
+        ]
+    },
+    {
+        "id": "113ecc247a42d53e",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Parcela4",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 1200,
+        "wires": [
+            [
+                "03c35fb1c32535b0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b41b594e50732f78",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "077fb1fe747d05c1",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "3684e1e4e12cb210",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "7aaefdc671ee742b",
+        "type": "link in",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "b41b594e50732f78",
+            "077fb1fe747d05c1",
+            "3684e1e4e12cb210",
+            "e3dcf5038c43186d",
+            "607187d5a298e273",
+            "9b9a46e7c6efd2ef",
+            "e2021f7f91cb995f",
+            "937f7c99b739de8a",
+            "eaaa59f33f73a734",
+            "d591b39113b17287",
+            "983bd27f4dd81c12",
+            "2e171f7b30d20f7e",
+            "7d9170e2d3f59005",
+            "2042b1fa6349c9a1",
+            "c729238d0f01f640",
+            "45e4ef3698f14e21",
+            "168baf9d8cf3fcb2",
+            "84eed2bacde5b4c6",
+            "ebdd43a78de16a35",
+            "1a3b7b88b4bc41e4",
+            "7eed7eda37329bba",
+            "07bed336d1febd1e",
+            "77aa13e231c0fcc3",
+            "e982f8d00bc72369",
+            "a37fe169c6033fd6",
+            "7e9ae016e5724983",
+            "7ced5899152e17a1",
+            "712e501b6f1f9da9",
+            "0403c890ea2c851a",
+            "1899e1febc7bdb2e",
+            "018fd8e2cd09be5b",
+            "37b7d51863f29463",
+            "976b320b510d502a",
+            "71b8923620373afb"
+        ],
+        "x": 975,
+        "y": 1060,
+        "wires": [
+            [
+                "c9d07e0e884414e9"
+            ]
+        ]
+    },
+    {
+        "id": "7769db42aff5ecb2",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 1560,
+        "wires": [
+            [
+                "163a925cd7272184"
+            ]
+        ]
+    },
+    {
+        "id": "07bc51ceff16f555",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1440,
+        "wires": [
+            [
+                "32293b4723b5c87c"
+            ]
+        ]
+    },
+    {
+        "id": "893c2078d91ee320",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var riego=msg.payload[0].Control;\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"Hoy se ha regado \"+riego+\" veces.\\n\";\nmsg.payload.content+=\"Última actualización: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1440,
+        "wires": [
+            [
+                "4e0f1a5de27e9ed7",
+                "37b7d51863f29463"
+            ]
+        ]
+    },
+    {
+        "id": "010f27570a631a56",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Riego",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 130,
+        "y": 1440,
+        "wires": [
+            [
+                "07bc51ceff16f555"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4e0f1a5de27e9ed7",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Riego",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "32293b4723b5c87c",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "hidraulica",
+        "operation": "find",
+        "x": 640,
+        "y": 1440,
+        "wires": [
+            [
+                "893c2078d91ee320"
+            ]
+        ]
+    },
+    {
+        "id": "b4196940614d3d97",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 2160,
+        "wires": [
+            [
+                "42ca06e4bca6b514"
+            ]
+        ]
+    },
+    {
+        "id": "fed42e088d077418",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var temperatura = msg.payload[0].temp[1];\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La temperatura es de \"+temperatura+\" ºC.\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2160,
+        "wires": [
+            [
+                "f9da1e5205a3f08f",
+                "07bed336d1febd1e"
+            ]
+        ]
+    },
+    {
+        "id": "45e5153c7765c059",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Temperatura_Parcela2",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 2160,
+        "wires": [
+            [
+                "b4196940614d3d97"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f9da1e5205a3f08f",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Temperatura 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "e04c3f871d39f1a0",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 2280,
+        "wires": [
+            [
+                "88f1378295fa1059"
+            ]
+        ]
+    },
+    {
+        "id": "67c7cda6f3498269",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var humedad = msg.payload[0].hum[1];\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La humedad es del \"+humedad+\" %.\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2280,
+        "wires": [
+            [
+                "ab80c64c51e62254",
+                "77aa13e231c0fcc3"
+            ]
+        ]
+    },
+    {
+        "id": "d8c6fa30afd5a097",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Humedad_Parcela2",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 2280,
+        "wires": [
+            [
+                "e04c3f871d39f1a0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ab80c64c51e62254",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Humedad 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "5ba04047d7db0980",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Ventilador_Parcela2",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 2400,
+        "wires": [
+            [
+                "46868ff124d78fec"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "42ca06e4bca6b514",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 2160,
+        "wires": [
+            [
+                "fed42e088d077418"
+            ]
+        ]
+    },
+    {
+        "id": "88f1378295fa1059",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 2280,
+        "wires": [
+            [
+                "67c7cda6f3498269"
+            ]
+        ]
+    },
+    {
+        "id": "46868ff124d78fec",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 2400,
+        "wires": [
+            [
+                "b9d85b8bacb48c7f"
+            ]
+        ]
+    },
+    {
+        "id": "d35c78b9e860fca5",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var ventiladores=msg.payload[0].vent[1];\nvar fecha=new Date();\n\nif (ventiladores === false) {\n    i = \"inactivo\";\n} else if (ventiladores === true) {\n    i = \"activo\";\n}\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"El ventilador está \"+i+\".\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2400,
+        "wires": [
+            [
+                "69f49744c89ce0c7",
+                "e982f8d00bc72369"
+            ]
+        ]
+    },
+    {
+        "id": "69f49744c89ce0c7",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Ventilador 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 2340,
+        "wires": []
+    },
+    {
+        "id": "07bed336d1febd1e",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "77aa13e231c0fcc3",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 2280,
+        "wires": []
+    },
+    {
+        "id": "e982f8d00bc72369",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 2400,
+        "wires": []
+    },
+    {
+        "id": "89fecdf89b7b9834",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 2520,
+        "wires": [
+            [
+                "ab7268b679b8f0d7"
+            ]
+        ]
+    },
+    {
+        "id": "9fcb037f7d295269",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var temperatura = msg.payload[0].temp[2];\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La temperatura es de \"+temperatura+\" ºC.\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2520,
+        "wires": [
+            [
+                "a5e986f8950b6c89",
+                "a37fe169c6033fd6"
+            ]
+        ]
+    },
+    {
+        "id": "cb74c8a249398f62",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Temperatura_Parcela3",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 2520,
+        "wires": [
+            [
+                "89fecdf89b7b9834"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a5e986f8950b6c89",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Temperatura 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 2460,
+        "wires": []
+    },
+    {
+        "id": "62106176bbf44cd4",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 2640,
+        "wires": [
+            [
+                "f34f0ebb0cd658c3"
+            ]
+        ]
+    },
+    {
+        "id": "fb8adb334c08e8be",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var humedad = msg.payload[0].hum[2];\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La humedad es del \"+humedad+\" %.\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2640,
+        "wires": [
+            [
+                "6f79d1e44d610419",
+                "7e9ae016e5724983"
+            ]
+        ]
+    },
+    {
+        "id": "e5166b211fafa258",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Humedad_Parcela3",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 2640,
+        "wires": [
+            [
+                "62106176bbf44cd4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6f79d1e44d610419",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Humedad 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 2580,
+        "wires": []
+    },
+    {
+        "id": "47bd5e9dee411761",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Ventilador_Parcela3",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 2760,
+        "wires": [
+            [
+                "4ae93cfb95abd11e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ab7268b679b8f0d7",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 2520,
+        "wires": [
+            [
+                "9fcb037f7d295269"
+            ]
+        ]
+    },
+    {
+        "id": "4ae93cfb95abd11e",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 2760,
+        "wires": [
+            [
+                "450c480fd230209f"
+            ]
+        ]
+    },
+    {
+        "id": "64fb62b293fbca6d",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var ventiladores=msg.payload[0].vent[2];\nvar fecha=new Date();\n\nif (ventiladores === false) {\n    i = \"inactivo\";\n} else if (ventiladores === true) {\n    i = \"activo\";\n}\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"El ventilador está \"+i+\".\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2760,
+        "wires": [
+            [
+                "1ec4418bd50414af",
+                "7ced5899152e17a1"
+            ]
+        ]
+    },
+    {
+        "id": "1ec4418bd50414af",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Ventilador 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 2700,
+        "wires": []
+    },
+    {
+        "id": "450c480fd230209f",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 2760,
+        "wires": [
+            [
+                "64fb62b293fbca6d"
+            ]
+        ]
+    },
+    {
+        "id": "a37fe169c6033fd6",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 2520,
+        "wires": []
+    },
+    {
+        "id": "7e9ae016e5724983",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 2640,
+        "wires": []
+    },
+    {
+        "id": "7ced5899152e17a1",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 2760,
+        "wires": []
+    },
+    {
+        "id": "9edf0123c6a37d6d",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 2880,
+        "wires": [
+            [
+                "7bf1ca48de12a04f"
+            ]
+        ]
+    },
+    {
+        "id": "c2a23d9b1f429424",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var temperatura = msg.payload[0].temp[3];\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La temperatura es de \"+temperatura+\" ºC.\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2880,
+        "wires": [
+            [
+                "2de31c82c914cbd8",
+                "712e501b6f1f9da9"
+            ]
+        ]
+    },
+    {
+        "id": "f5c8157a151244ea",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Temperatura_Parcela4",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 2880,
+        "wires": [
+            [
+                "9edf0123c6a37d6d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2de31c82c914cbd8",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Temperatura 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 2820,
+        "wires": []
+    },
+    {
+        "id": "e5c65a3b9349071d",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 3000,
+        "wires": [
+            [
+                "c0c3ad96b5e31c1c"
+            ]
+        ]
+    },
+    {
+        "id": "7a6974e69278126e",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var humedad = msg.payload[0].hum[3];\nvar fecha=new Date();\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"La humedad es del \"+humedad+\" %.\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 3000,
+        "wires": [
+            [
+                "849cdd4713fb8137",
+                "0403c890ea2c851a"
+            ]
+        ]
+    },
+    {
+        "id": "16343fec3b9ecbb3",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Humedad_Parcela4",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 3000,
+        "wires": [
+            [
+                "e5c65a3b9349071d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "849cdd4713fb8137",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Humedad 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 2940,
+        "wires": []
+    },
+    {
+        "id": "e9e80a2aa5041e1e",
+        "type": "telegram command",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "command": "/Ventilador_Parcela4",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "3d2ef32bad8b37db",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 3120,
+        "wires": [
+            [
+                "42bf7a973422e954"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "42bf7a973422e954",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "ultimo registro",
+        "func": "msg.mensaje=msg.payload;\nmsg.limit=1;\nmsg.sort={\"date\":-1};\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 3120,
+        "wires": [
+            [
+                "ed42583d147ec790"
+            ]
+        ]
+    },
+    {
+        "id": "e35f49aa124a14e5",
+        "type": "function",
+        "z": "4119093c6d964c05",
+        "name": "mensaje respuesta",
+        "func": "var ventiladores=msg.payload[0].vent[3];\nvar fecha=new Date();\n\nif (ventiladores === false) {\n    i = \"inactivo\";\n} else if (ventiladores === true) {\n    i = \"activo\";\n}\n\nmsg.payload=msg.mensaje;\n\nmsg.payload.content=\"El ventilador está \"+i+\".\\n\";\nmsg.payload.content+=\"Última consulta: \"+fecha.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', hour12: false });\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 3120,
+        "wires": [
+            [
+                "3de8e60f427fdbf1",
+                "1899e1febc7bdb2e"
+            ]
+        ]
+    },
+    {
+        "id": "3de8e60f427fdbf1",
+        "type": "debug",
+        "z": "4119093c6d964c05",
+        "name": "Ventilador 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 3060,
+        "wires": []
+    },
+    {
+        "id": "ed42583d147ec790",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 3120,
+        "wires": [
+            [
+                "e35f49aa124a14e5"
+            ]
+        ]
+    },
+    {
+        "id": "712e501b6f1f9da9",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 2880,
+        "wires": []
+    },
+    {
+        "id": "0403c890ea2c851a",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 3000,
+        "wires": []
+    },
+    {
+        "id": "1899e1febc7bdb2e",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 3120,
+        "wires": []
+    },
+    {
+        "id": "6320110738ea4f06",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 2040,
+        "wires": [
+            [
+                "4831a2df85637e54"
+            ]
+        ]
+    },
+    {
+        "id": "2475277ecbb952c1",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 1920,
+        "wires": [
+            [
+                "956964ece3fbc58b"
+            ]
+        ]
+    },
+    {
+        "id": "b9d85b8bacb48c7f",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 2400,
+        "wires": [
+            [
+                "d35c78b9e860fca5"
+            ]
+        ]
+    },
+    {
+        "id": "f34f0ebb0cd658c3",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 2640,
+        "wires": [
+            [
+                "fb8adb334c08e8be"
+            ]
+        ]
+    },
+    {
+        "id": "7bf1ca48de12a04f",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 2880,
+        "wires": [
+            [
+                "c2a23d9b1f429424"
+            ]
+        ]
+    },
+    {
+        "id": "c0c3ad96b5e31c1c",
+        "type": "mongodb in",
+        "z": "4119093c6d964c05",
+        "mongodb": "3752afa1.deaf9",
+        "name": "",
+        "collection": "datos",
+        "operation": "find",
+        "x": 630,
+        "y": 3000,
+        "wires": [
+            [
+                "7a6974e69278126e"
+            ]
+        ]
+    },
+    {
+        "id": "018fd8e2cd09be5b",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "37b7d51863f29463",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "976b320b510d502a",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "71b8923620373afb",
+        "type": "link out",
+        "z": "4119093c6d964c05",
+        "name": "",
+        "links": [
+            "7aaefdc671ee742b"
+        ],
+        "x": 1115,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "3752afa1.deaf9",
+        "type": "mongodb",
+        "hostname": "iot.ac.uma.es",
+        "connectOptions": "",
+        "port": "27017",
+        "db": "II6",
+        "name": ""
+    },
+    {
+        "id": "e77f4c9f021c5920",
+        "type": "mqtt-broker",
+        "name": "II6",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3d2ef32bad8b37db",
+        "type": "telegram bot",
+        "botname": "InfInd6_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]

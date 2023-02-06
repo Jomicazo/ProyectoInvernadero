@@ -1,0 +1,71 @@
+[
+    {
+        "id": "abc2d7e8ab6bb26c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "609bfb8feae6b8f6",
+        "type": "function",
+        "z": "abc2d7e8ab6bb26c",
+        "name": "ControlRIEGO",
+        "func": "var time = new Date();\nvar displaytime = time.toLocaleTimeString();\nvar hora = time.getHours()+1;\nvar sec = time.getSeconds();\nvar control=0;\nif (hora == 6 && sec < 30)\n{\n    control=1;\n}\nif (hora == 14 && sec < 30)\n{\n    control=1;\n}\nif (hora == 20 && sec < 30)\n{\n    control=1;\n}\nelse\n{\n    control = 0;\n}\nmsg.payload.horatf=control;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "1abc05108b595387"
+            ]
+        ]
+    },
+    {
+        "id": "1abc05108b595387",
+        "type": "mqtt out",
+        "z": "abc2d7e8ab6bb26c",
+        "name": "",
+        "topic": "II6/ESP9590023/Riego",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "96815dc81ac960de",
+        "x": 720,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "96815dc81ac960de",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "iot.ac.uma.es",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
